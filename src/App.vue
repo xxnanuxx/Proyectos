@@ -11,13 +11,13 @@
                 <img src="/src/assets/logo.svg" width="30" height="30">
               </a>
             </li>
-             <li class="nav-item" style="margin-left:50px">
+             <li class="nav-item, position-absolute start-40" style="margin-left:50px">
               <input class="form-control mr-sm-2" type="search" placeholder="Ingrese el libro">
             </li>
-             <li class="nav-item" style="margin-left:5px">
+             <li class="nav-item, position-absolute start-50" style="margin-left:5px">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </li>
-             <li class="nav-item" style="margin-left:50px">
+             <li class="nav-item, position-absolute end-0" style="margin-left:50px">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Sesion</button>
             </li>
           </ul>
