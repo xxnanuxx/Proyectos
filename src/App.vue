@@ -1,4 +1,16 @@
 <script>
+import { RouterLink, RouterView } from "vue-router";
+import { storeToRefs } from "pinia";
+import { useLoginStore } from "./stores/login";
+
+export default {
+  setup() {
+    const store = useLoginStore();
+    const { isLogin, user } = storeToRefs(store);
+    const { hasPermissions, isLoginn } = store
+    return { store, isLogin, user, hasPermissions, isLoginn };
+  }
+};
 </script>
 
 <template>
@@ -14,13 +26,17 @@
              <li class="nav-item" style="margin-left:50px">
               <input class="form-control" type="search" placeholder="Ingrese el libro">
             </li>
-             <li class="nav-item" style="margin-left:5px">
+            <li class="nav-item" style="margin-left:5px">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </li>
+            <li class="nav-item" style="margin-left:5px">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Libro</button>
+            </li>
              <li class="nav-item, position-absolute end-0" style="margin-left:50px">
-              <router-link to="/InicioSesion">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Sesion</button>
-              </router-link>
+              <RouterLink to="/InicioSesion">
+                <button v-if="!isLogin" class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Sesion</button>
+              </RouterLink>
+              <button v-if="isLogin" @click="logout" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar Sesion</button>
             </li>
           </ul>
         </div>

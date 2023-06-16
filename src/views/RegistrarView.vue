@@ -16,6 +16,9 @@
         <div class="row" style="margin-top:10px; width:50%">
             <input placeholder="Contraseña" type="search" class="form-control">
         </div>
+        <div class="row" style="margin-top:10px; width:50%">
+            <button class="btn btn-outline-success" @click="redirigir" type="submit">CREAR CUENTA</button>
+        </div>
     </div>
 </div>
 </template>
