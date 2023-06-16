@@ -8,9 +8,9 @@ export const useLoginStore = defineStore('login', {
             return this.isLogin
         }
     },
+    //holaa
     actions: {
         logout() {
-            this.isLogin = false
             this.user = { email: '', permissions: [] }
         },
         login(user) {
