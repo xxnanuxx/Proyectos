@@ -11,6 +11,7 @@ export const useLoginStore = defineStore('login', {
     //holaa
     actions: {
         logout() {
+            this.isLogin = false
             this.user = { email: '', permissions: [] }
         },
         login(user) {
