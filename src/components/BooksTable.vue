@@ -70,26 +70,4 @@ export default {
 </style>
 
 
-
-
-<!-- <template>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>titulo</th>
-            <th>precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="book in books" :key="book.id">
-            <td>{{ book.titulo }}</td>
-            <td>{{ book.precio }}</td>
-            
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </template>  -->
-  
   
