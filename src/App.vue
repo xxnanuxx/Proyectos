@@ -30,7 +30,9 @@ export default {
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </li>
             <li class="nav-item" style="margin-left:5px">
+              <RouterLink to="/AgregarLibro">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Libro</button>
+              </RouterLink>
             </li>
              <li class="nav-item, position-absolute end-0" style="margin-left:50px">
               <RouterLink to="/InicioSesion">

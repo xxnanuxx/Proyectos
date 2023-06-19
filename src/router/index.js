@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import InicioSesionView from '../views/InicioSesionView.vue'
 import RegistrarView from '../views/RegistrarView.vue'
-import MyBooksView from '../views/MyBooksView.vue'
+import MisLibrosView from '../views/MisLibrosView.vue'
 import LibroView from '../views/LibroView.vue'
+import AgregarLibroView from '../views/AgregarLibroView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,9 +17,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -37,6 +35,21 @@ const router = createRouter({
       name: 'Libro',
       component: LibroView
     },
+
+    {
+      path: '/MisLibros',
+      name:'Libro',
+      component: MisLibrosView
+    },
+
+    
+    {
+      path: '/AgregarLibro',
+      name:'AgregarLibro',
+      component: AgregarLibroView
+    },
+      
+      
 
 
   ]
