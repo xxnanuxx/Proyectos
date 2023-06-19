@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import InicioSesionView from '../views/InicioSesionView.vue'
 import RegistrarView from '../views/RegistrarView.vue'
+import MyBooksView from '../views/MyBooksView.vue'
+import LibroView from '../views/LibroView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,8 +30,17 @@ const router = createRouter({
       path: '/InicioSesion',
       name: 'InicioSesion',
       component: InicioSesionView
-    }
+    },
+
+    {
+      path: '/Libro',
+      name: 'Libro',
+      component: LibroView
+    },
+
+
   ]
 })
+
 
 export default router
