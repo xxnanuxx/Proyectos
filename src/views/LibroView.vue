@@ -31,24 +31,34 @@ export default {
     <!-- Muestra los detalles del objeto
     ACÁ VA TODO DE V-IF Y COSAS PARA ADMI Y PERSONA!!!!!!!!!!! -->
   
-      <!-- <h4> Titulo: </h4> <input type ="text" :value="objeto.titulo" @input="titulo = event.target.value"  > -->
+    <!-- <h4> Titulo: </h4> <input type ="text" :value="objeto.titulo" @input="titulo = event.target.value"  > -->
+  
     <div class="conteiner">
-      <div class="conteinerLibro">
 
-      <div class="conteinerTitulo">
+      <div class="col" >
+
+      <div class="col" style="margin-left: 350px; margin-top:200px ;">
+      <div class="row" >
       <p> {{ objeto.titulo }}</p>
       </div>
 
-     <div class="conteinerImagen">
-      <img :src="objeto.imagen" alt="Imagen del objeto" />
-    </div>
+     
 
-    <div class="conteinerPrecio">
+     <div class="row">
       <p>Precio: {{ objeto.precio }}</p>
+      </div>
     </div>
 
-  </div>
+      <div class="col">
+       <div class="row">
+      <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 45%;"/>
+      </div>
+
+      </div>
+    </div>
+      
 </div>
+
 </template>
 
 
@@ -56,42 +66,31 @@ export default {
 
 .conteiner{
   background-color: beige;
-}
-
-.conteinerLibro{
-  align-items: center;
-  
 
 }
-.conteinerImagen{
-  /* width: 10%;
+
+.imagen{
+  width: 70%;
+  margin-right: 20%;
   height: auto; 
   margin-left: 10%;
   text-align: left;
   font-size: 10%;
-  float: left; */
-  width: 200px; 
+  float: left;  
   height: 200px; 
   margin-right: 10px;
 }
 
-.conteinerTitulo{
-   flex: 5%;
-  text-align: right;
-  margin-right:30%;
-   font-size: 150%;  
-   
-}
-
-.conteinerPrecio{
-  /* font-size: 20%;
-  margin: 10%;
-  width: 10%; */
+.titulo{
   flex: 5%;
   text-align: right;
   margin-right:30%;
    font-size: 150%; 
 }
+
+
+
+
 
 
 

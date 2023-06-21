@@ -50,18 +50,18 @@ export default {
 }
 
    
-    methods: {
-    logear() 
-    { if(this.usuario.email=="usuario@test.com" && this.usuario.passw=="123456") {
-        this.login({email:this.usuario.email, permissions:[]})
-        this.$router.push("/")
-      } else if(this.usuario.email=="admin@test.com" && this.usuario.passw=="123456") {
-        this.login({email:this.usuario.email,permissions: ['BooksTable']})
-        this.$router.push("/")
-      } else {
-        alert('Credenciales erroneas')
-      };
-    }
-  };
+//     methods: {
+//     logear() 
+//     { if(this.usuario.email=="usuario@test.com" && this.usuario.passw=="123456") {
+//         this.login({email:this.usuario.email, permissions:[]})
+//         this.$router.push("/")
+//       } else if(this.usuario.email=="admin@test.com" && this.usuario.passw=="123456") {
+//         this.login({email:this.usuario.email,permissions: ['BooksTable']})
+//         this.$router.push("/")
+//       } else {
+//         alert('Credenciales erroneas')
+//       };
+//     }
+//   };
 
 </script>
