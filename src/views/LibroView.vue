@@ -1,17 +1,22 @@
 <script>
- import MisLibrosView from '../views/MisLibrosView.vue'
- 
+import BooksTable from '../components/BooksTable.vue';
+
+  
 export default {
+  
   // props: ['id']
   data() {
     return {
-      objeto: {},
+      books : BooksTable.data().books
     };
   },
-  created() {
-    const objetoId = this.$route.params.id;
-    this.objeto = { id: objetoId, nombre: 'Objeto', precio: 9.99 };
-}
+  computed: {
+    objeto() {
+      const objetoId = parseInt(this.$route.params.id);
+      
+      return this.books.find(objeto => objeto.id === objetoId);
+    },
+  },
 
 };
 
@@ -21,15 +26,73 @@ export default {
 
 
 <template>
-   <h2>Componente B</h2>
-    <!-- Muestra los detalles del objeto -->
-    <div>
-      <h3>{{ MisLibrosView.nombre }}</h3>
-      <p>Precio: {{ MisLibrosView.precio }}</p>
+   <h2>Libro</h2>
+   
+    <!-- Muestra los detalles del objeto
+    ACÁ VA TODO DE V-IF Y COSAS PARA ADMI Y PERSONA!!!!!!!!!!! -->
+  
+      <!-- <h4> Titulo: </h4> <input type ="text" :value="objeto.titulo" @input="titulo = event.target.value"  > -->
+    <div class="conteiner">
+      <div class="conteinerLibro">
+
+      <div class="conteinerTitulo">
+      <p> {{ objeto.titulo }}</p>
+      </div>
+
+     <div class="conteinerImagen">
+      <img :src="objeto.imagen" alt="Imagen del objeto" />
     </div>
+
+    <div class="conteinerPrecio">
+      <p>Precio: {{ objeto.precio }}</p>
+    </div>
+
+  </div>
+</div>
 </template>
 
+
 <style>
+
+.conteiner{
+  background-color: beige;
+}
+
+.conteinerLibro{
+  align-items: center;
+  
+
+}
+.conteinerImagen{
+  /* width: 10%;
+  height: auto; 
+  margin-left: 10%;
+  text-align: left;
+  font-size: 10%;
+  float: left; */
+  width: 200px; 
+  height: 200px; 
+  margin-right: 10px;
+}
+
+.conteinerTitulo{
+   flex: 5%;
+  text-align: right;
+  margin-right:30%;
+   font-size: 150%;  
+   
+}
+
+.conteinerPrecio{
+  /* font-size: 20%;
+  margin: 10%;
+  width: 10%; */
+  flex: 5%;
+  text-align: right;
+  margin-right:30%;
+   font-size: 150%; 
+}
+
 
 
 </style>

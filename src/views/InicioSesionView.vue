@@ -1,4 +1,5 @@
 
+
 <template>
 <div class="container">
     <div class="col" style="margin-top:20px">
@@ -12,7 +13,7 @@
             <input v-model="usuario.contraseña" placeholder="Constraseña" type="password" class="form-control">
         </div>
         <div class="row" style="margin-top:10px; width:50%">
-            <button class="btn btn-outline-success" @click="loguin" type="submit">INICIAR SESION</button>
+            <button class="btn btn-outline-success" @click="login" type="submit">INICIAR SESION</button>
         </div>
         <div class="row" style="margin-top:15px; width:50%">
             <p class="texto">¿No tiene cuenta creada?</p>
@@ -37,23 +38,30 @@ import { useLoginStore } from "../stores/login.js";
 export default {
     data(){
         return {
-            usuario: {email: '', contraseña: ''}
+            usuario: { email: '', contraseña: ''}
         }
     },
     setup() {
         const store = useLoginStore();
         const { login } = store;
         return { login };
-    },
-    methods:{
-        redirigir(){
-            this.$router.push("/Registrar")
-        },
-        loguin(){
-            //conexion con la api
-            this.login();
-            this.$router.push("/");
-        }
-    },
+    }
+
 }
+
+   
+    methods: {
+    logear() 
+    { if(this.usuario.email=="usuario@test.com" && this.usuario.passw=="123456") {
+        this.login({email:this.usuario.email, permissions:[]})
+        this.$router.push("/")
+      } else if(this.usuario.email=="admin@test.com" && this.usuario.passw=="123456") {
+        this.login({email:this.usuario.email,permissions: ['BooksTable']})
+        this.$router.push("/")
+      } else {
+        alert('Credenciales erroneas')
+      };
+    }
+  };
+
 </script>

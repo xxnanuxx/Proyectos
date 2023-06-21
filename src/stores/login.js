@@ -8,18 +8,18 @@ export const useLoginStore = defineStore('login', {
             return this.isLogin
         }
     },
-    //holaa
+    
     actions: {
         logout() {
             this.isLogin = false
-            this.user = { email: '', permissions: [] }
+             this.user = { email: '', permissions: [] }
         },
         login(user) {
             this.isLogin = true
-            this.user = user
+             this.user = user
         },
-        hasPermissions(access) {
-            return this.user.permissions.filter(p=>p==access).length > 0 ? true: false
-        }
+         hasPermissions(access) {
+             return this.user.permissions.filter(p=>p==access).length > 0 ? true: false
+         }
     },
 })

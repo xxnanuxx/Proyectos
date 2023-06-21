@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import InicioSesionView from '../views/InicioSesionView.vue'
 import RegistrarView from '../views/RegistrarView.vue'
-import MisLibrosView from '../views/MisLibrosView.vue'
 import LibroView from '../views/LibroView.vue'
 import AgregarLibroView from '../views/AgregarLibroView.vue'
+import BooksTable from '../components/BooksTable.vue' 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +14,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+
     {
       path: '/about',
       name: 'about',
@@ -24,24 +25,28 @@ const router = createRouter({
       name: 'Registrar',
       component: RegistrarView
     },
+
     {
-      path: '/InicioSesion',
-      name: 'InicioSesion',
-      component: InicioSesionView
+      path: '/BooksTable',
+      name: 'BooksTable',
+      component: BooksTable,
+      
     },
 
     {
-      path: '/Libro',
+      path: '/InicioSesion',
+      name: 'InicioSesion',
+      component: InicioSesionView,
+      // meta: {RequireAuth: true}
+    },
+
+    {
+      path: '/Libro/:id',
       name: 'Libro',
       component: LibroView
     },
 
-    {
-      path: '/MisLibros',
-      name:'Libro',
-      component: MisLibrosView
-    },
-
+   
     
     {
       path: '/AgregarLibro',
@@ -55,5 +60,13 @@ const router = createRouter({
   ]
 })
 
-
 export default router
+
+// router.beforeEach( (to,from,next) => {
+//   const store = useLoginStore();
+//   if( to.matched.some(r => r.meta.RequireAuth) && !store.isLogin ) {
+//   next('/BookTable')
+//   }
+//   next()
+//   })
+

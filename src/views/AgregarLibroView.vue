@@ -1,10 +1,7 @@
 <script>
-import AgregarLibroView from '../views/AgregarLibroView.vue'
 
 export default {
-    components:{
-        AgregarLibroView
-    },
+    
   data() {
     return {
       titulo: '',

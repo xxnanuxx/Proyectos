@@ -1,3 +1,7 @@
+<script>
+</script>
+
+
 <template>
 <div class="container">
     <div class="col" style="margin-top:20px">
@@ -24,4 +28,3 @@
 </template>
 
 
-redirigir
