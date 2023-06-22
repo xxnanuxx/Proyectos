@@ -1,22 +1,36 @@
 <script>
+import BooksTable from '../components/BooksTable.vue';
 
 export default {
     
   data() {
+
     return {
+      
       titulo: '',
       precio: '',
       imagen:'',
+      books:  BooksTable.data().books
     };
   },
   methods: {
     agregarLibro() {
-      // Aquí puedes realizar la lógica para agregar el libro utilizando los datos ingresados en los campos
-      // Por ejemplo, puedes enviar una solicitud a una API para agregar el libro a la biblioteca
-      // Luego, puedes redirigir a la vista de la biblioteca para mostrar la lista actualizada de libros
-      this.$router.push('/');
-    },
-  },
+
+      const nuevoLibro ={
+        titulo: '',
+        precio: '',
+        imagen: '',
+
+      }
+      this.books.push(nuevoLibro); // Agrega el nuevo libro a la lista books
+       this.$router.push('/BooksTable');
+    }
+
+
+
+
+
+  }
 };
 </script>
 
@@ -32,6 +46,11 @@ export default {
         <div>
           <label for="precio">Precio:</label>
           <input type="text" id="precio" v-model="precio" placeholder="Ingrese el precio del libro" />
+        </div>
+
+        <div>
+          <label for="imagen">Imagen:</label>
+          <input type="text" id="imagen" v-model="imagen" placeholder="Ingrese la url de la imagen" />
         </div>
         <!-- Agrega más campos para otros datos del libro (por ejemplo, precio, descripción, etc.) -->
         <button @click="agregarLibro">Agregar</button>

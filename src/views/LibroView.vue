@@ -35,20 +35,20 @@ export default {
 
     <div class="col" >
 
-      <div class="col" style="margin-left: 350px; margin-top:200px">
+      <div class="col" style="margin-left: 60px; margin-top:50px">
         
         <div class="row" >
           <p> {{ objeto.titulo }}</p>
         </div>
 
         <div class="row">
-          <p>Precio: {{ objeto.precio }}</p>
+          <p> $ {{ objeto.precio }}</p>
         </div>
       </div>
 
       <div class="col">
         <div class="row">
-          <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 45%;"/>
+          <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 20%; margin-left: 25px;"/>
         </div>
       </div>
     </div>
@@ -92,10 +92,3 @@ export default {
 
 </style>
 
-<!-- <div>
-  <h1>Componente de destino</h1>
-  <div>{{ objeto }}</div>
-
-   <p>ID recibido: {{ libro}}</p> 
-
-</div> -->
