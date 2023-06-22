@@ -63,23 +63,4 @@ export default {
         }
      }
 }
-
-<<<<<<< HEAD
-   
-//     methods: {
-//     logear() 
-//     { if(this.usuario.email=="usuario@test.com" && this.usuario.passw=="123456") {
-//         this.login({email:this.usuario.email, permissions:[]})
-//         this.$router.push("/")
-//       } else if(this.usuario.email=="admin@test.com" && this.usuario.passw=="123456") {
-//         this.login({email:this.usuario.email,permissions: ['BooksTable']})
-//         this.$router.push("/")
-//       } else {
-//         alert('Credenciales erroneas')
-//       };
-//     }
-//   };
-
-=======
->>>>>>> a22d8116694d590b8fc593bb7e45a93a0cc2cd7d
 </script>

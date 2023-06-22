@@ -26,38 +26,34 @@ export default {
 
 
 <template>
-   <h2>Libro</h2>
-   
     <!-- Muestra los detalles del objeto
     ACÁ VA TODO DE V-IF Y COSAS PARA ADMI Y PERSONA!!!!!!!!!!! -->
   
     <!-- <h4> Titulo: </h4> <input type ="text" :value="objeto.titulo" @input="titulo = event.target.value"  > -->
   
-    <div class="conteiner">
+  <div class="conteiner">
 
-      <div class="col" >
+    <div class="col" >
 
-      <div class="col" style="margin-left: 350px; margin-top:200px ;">
-      <div class="row" >
-      <p> {{ objeto.titulo }}</p>
+      <div class="col" style="margin-left: 350px; margin-top:200px">
+        
+        <div class="row" >
+          <p> {{ objeto.titulo }}</p>
+        </div>
+
+        <div class="row">
+          <p>Precio: {{ objeto.precio }}</p>
+        </div>
       </div>
-
-     
-
-     <div class="row">
-      <p>Precio: {{ objeto.precio }}</p>
-      </div>
-    </div>
 
       <div class="col">
-       <div class="row">
-      <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 45%;"/>
-      </div>
-
+        <div class="row">
+          <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 45%;"/>
+        </div>
       </div>
     </div>
       
-</div>
+  </div>
 
 </template>
 
