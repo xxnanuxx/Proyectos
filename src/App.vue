@@ -20,7 +20,9 @@ export default {
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="navbar-brand">
+                <RouterLink to="/">
                 <img src="/src/assets/logo.svg" width="30" height="30">
+                </RouterLink>
               </a>
             </li>
              <li class="nav-item" style="margin-left:50px">

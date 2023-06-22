@@ -4,7 +4,7 @@ import InicioSesionView from '../views/InicioSesionView.vue'
 import RegistrarView from '../views/RegistrarView.vue'
 import LibroView from '../views/LibroView.vue'
 import AgregarLibroView from '../views/AgregarLibroView.vue'
-import BooksTable from '../components/BooksTable.vue' 
+import BooksTable from '../views/BooksTable.vue' 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

@@ -1,6 +1,6 @@
 <script>
+import axios from "axios"
 import { RouterLink, RouterView } from "vue-router";
-
 
 export default {
   components:{
@@ -15,13 +15,12 @@ export default {
     this.cargarLista()
   },
   methods: {
-    async cargarLista(){
-      try {
-        const res = await axios.get("http://localhost:8080/libro")
-        this.books = res.data
-      } catch (error) {
-        alert("Error de conexion")
-      }
+    cargarLista(){
+        axios.get("http://localhost:8080/libro").then(response => {
+          this.books = response.data;
+        }).catch(error => {
+          console.error(error);
+        })
     }
   }
 

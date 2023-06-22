@@ -18,7 +18,8 @@
 
 
 <script >
-import BooksTable from '../components/BooksTable.vue';
+import axios from "axios"
+import BooksTable from './BooksTable.vue';
 
 export default {
 components: {

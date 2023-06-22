@@ -1,59 +1,68 @@
 <script>
-import BooksTable from '../components/BooksTable.vue';
+import axios from "axios"
 
 export default {
     
   data() {
 
     return {
-      
-      titulo: '',
-      precio: '',
-      imagen:'',
-      books:  BooksTable.data().books
+      libro:{},
+      categoria: '',
+      options: [
+        { value: '1', label: 'Accion' },
+        { value: '2', label: 'Terror' },
+        { value: '3', label: 'Comics' }
+      ]
     };
   },
   methods: {
-    agregarLibro() {
-
-      const nuevoLibro ={
-        titulo: '',
-        precio: '',
-        imagen: '',
-
+    async agregarLibro() {
+      const libro = {...this.libro}
+      try {
+        console.log(this.libro);
+        await axios.post("http://localhost:8080/libro", libro)
+        this.$router.push('/BooksTable');
+      } catch (error) {
+        console.log(error);
+        alert("Error de conexion")
       }
-      this.books.push(nuevoLibro); // Agrega el nuevo libro a la lista books
-       this.$router.push('/BooksTable');
     }
-
-
-
-
-
   }
 };
 </script>
 
 <template>
-    <div>
-      <h2>Agregar Libro</h2>
-      <!-- Agrega los campos para ingresar los datos del libro -->
-      <form>
-        <div>
-          <label for="titulo">Título:</label>
-          <input type="text" id="titulo" v-model="titulo" placeholder="Ingrese el título del libro" />
+<div class="container">
+    <div class="col" style="margin-top:20px">
+        <div class="row">
+            <h4>AGREGAR LIBRO</h4>
         </div>
-        <div>
-          <label for="precio">Precio:</label>
-          <input type="text" id="precio" v-model="precio" placeholder="Ingrese el precio del libro" />
+        <div class="row" style="width:50%">
+            <input type="text" v-model="libro.titulo" placeholder="Ingrese el título del libro" class="form-control">
         </div>
-
-        <div>
-          <label for="imagen">Imagen:</label>
-          <input type="text" id="imagen" v-model="imagen" placeholder="Ingrese la url de la imagen" />
+        <div class="row" style="margin-top:10px; width:50%">
+            <input type="text" v-model="libro.autor" placeholder="Ingrese el autor del libro" class="form-control">
         </div>
-        <!-- Agrega más campos para otros datos del libro (por ejemplo, precio, descripción, etc.) -->
-        <button @click="agregarLibro">Agregar</button>
-      </form>
+         <div class="row" style="margin-top:10px; width:50%">
+            <input type="text" v-model="libro.stock" placeholder="Ingrese el stcock del libro" class="form-control">
+        </div>
+        <div class="row" style="margin-top:10px; width:50%">
+            <input type="text" v-model="libro.precio" placeholder="Ingrese el precio del libro" class="form-control">
+        </div>
+        <div class="row" style="margin-top:10px; width:50%">
+            <input type="text" v-model="libro.imagen" placeholder="Ingrese la url de la imagen" class="form-control">
+        </div>
+        <div class="row" style="margin-top:10px; width:25%">
+            <select v-model="libro.categoria">
+                <option v-for="option in options" :value="option.value" :key="option.value">
+                  {{ option.label }}
+                </option>
+            </select>
+        </div>
+        <div class="row" style="margin-top:10px; width:50%">
+            <button class="btn btn-outline-success" @click="agregarLibro" type="submit">AGREGAR LIBRO</button>
+        </div>
     </div>
-  </template>
+</div>
+
+</template>

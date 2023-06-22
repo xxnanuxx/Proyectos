@@ -1,10 +1,9 @@
 <script>
-import BooksTable from '../components/BooksTable.vue';
+import BooksTable from './BooksTable.vue';
 
   
 export default {
-  
-  // props: ['id']
+
   data() {
     return {
       books : BooksTable.data().books
@@ -19,9 +18,6 @@ export default {
   },
 
 };
-
-
-
 </script>
 
 
@@ -83,12 +79,6 @@ export default {
   margin-right:30%;
    font-size: 150%; 
 }
-
-
-
-
-
-
 
 </style>
 
