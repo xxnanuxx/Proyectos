@@ -52,7 +52,7 @@ export default {
                 this.login({email:this.usuario.email, permissions:[]})
                 this.$router.push("/")
             } else if(this.usuario.email=="admin@test.com" && this.usuario.passw=="123456") {
-                this.login({email:this.usuario.email,permissions: ['BooksTable']})
+                this.login({email:this.usuario.email,permissions: ['AgregarLibro']})
                 this.$router.push("/")
             } else {
                 alert('Credenciales erroneas')

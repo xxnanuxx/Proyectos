@@ -1,20 +1,27 @@
 <script>
 import BooksTable from './BooksTable.vue';
-
+import axios from 'axios'
   
 export default {
 
   data() {
     return {
-      books : BooksTable.data().books
+      book: {}
     };
   },
-  computed: {
+  mounted() {
+    this.objeto()
+  },
+  methods:{
     objeto() {
       const objetoId = parseInt(this.$route.params.id);
-      
-      return this.books.find(objeto => objeto.id === objetoId);
-    },
+      axios.get("http://localhost:8080/libro" + "/" + objetoId).then(response => {
+          this.book = response.data.result;
+          console.log(response.data.result);
+        }).catch(error => {
+          console.error(error);
+      })
+    },  
   },
 
 };
@@ -22,11 +29,6 @@ export default {
 
 
 <template>
-    <!-- Muestra los detalles del objeto
-    ACÁ VA TODO DE V-IF Y COSAS PARA ADMI Y PERSONA!!!!!!!!!!! -->
-  
-    <!-- <h4> Titulo: </h4> <input type ="text" :value="objeto.titulo" @input="titulo = event.target.value"  > -->
-  
   <div class="conteiner">
 
     <div class="col" >
@@ -34,17 +36,17 @@ export default {
       <div class="col" style="margin-left: 60px; margin-top:50px">
         
         <div class="row" >
-          <p> {{ objeto.titulo }}</p>
+          <p> {{ book.titulo }}</p>
         </div>
 
         <div class="row">
-          <p> $ {{ objeto.precio }}</p>
+          <p> $ {{ book.precio }}</p>
         </div>
       </div>
 
       <div class="col">
         <div class="row">
-          <img :src="objeto.imagen" alt="Imagen del objeto"  style="width: 20%; margin-left: 25px;"/>
+          <img :src="book.imagen" alt="Imagen del objeto"  style="width: 20%; margin-left: 25px;"/>
         </div>
       </div>
     </div>

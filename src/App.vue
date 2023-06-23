@@ -7,8 +7,8 @@ export default {
   setup() {
     const store = useLoginStore();
     const { isLogin, user } = storeToRefs(store);
-    const { hasPermissions, isLoginn } = store
-    return { store, isLogin, user, hasPermissions, isLoginn };
+    const { hasPermissions } = store
+    return { store, isLogin, user, hasPermissions };
   }
 };
 </script>
@@ -25,7 +25,7 @@ export default {
                 </RouterLink>
               </a>
             </li>
-             <li class="nav-item" style="margin-left:50px">
+            <li class="nav-item" style="margin-left:50px">
               <input class="form-control" type="search" placeholder="Ingrese el libro">
             </li>
             <li class="nav-item" style="margin-left:5px">
@@ -33,7 +33,7 @@ export default {
             </li>
             <li class="nav-item" style="margin-left:5px">
               <RouterLink to="/AgregarLibro">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Libro</button>
+              <button v-if="isLogin && hasPermissions('AgregarLibro')" class="btn btn-outline-success my-2 my-sm-0" type="submit">Agregar Libro</button>
               </RouterLink>
             </li>
              <li class="nav-item, position-absolute end-0" style="margin-left:50px">

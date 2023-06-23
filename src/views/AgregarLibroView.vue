@@ -19,11 +19,9 @@ export default {
     async agregarLibro() {
       const libro = {...this.libro}
       try {
-        console.log(this.libro);
         await axios.post("http://localhost:8080/libro", libro)
         this.$router.push('/BooksTable');
       } catch (error) {
-        console.log(error);
         alert("Error de conexion")
       }
     }
